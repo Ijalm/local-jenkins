@@ -1,14 +1,14 @@
-# Use official Nginx image to serve static HTML
-FROM nginx:alpine
+# Use official Python image
+FROM python:3.11-alpine
 
-# Remove default nginx static files
-RUN rm -rf /usr/share/nginx/html/*
+# Set working directory
+WORKDIR /app
 
-# Copy app files to nginx html directory
-COPY . /usr/share/nginx/html/
+# Copy app files
+COPY . .
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8000
+EXPOSE 8000
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Serve using Python's built-in HTTP server
+CMD ["python", "-m", "http.server", "8000"]
