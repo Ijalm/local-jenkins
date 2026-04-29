@@ -11,4 +11,4 @@ COPY . .
 EXPOSE 8000
 
 # Serve using Python's built-in HTTP server
-CMD ["python", "-m", "http.server", "8000"]
+CMD ["python", "index.html"]
