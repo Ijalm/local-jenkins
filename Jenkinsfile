@@ -63,11 +63,11 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/Ijalm/local-jenkins.git'
-            }
-        }
+        // stage('Clone Repo') {
+        //     steps {
+        //         git 'https://github.com/Ijalm/local-jenkins.git'
+        //     }
+        // }
 
         stage('Build Image') {
             steps {
