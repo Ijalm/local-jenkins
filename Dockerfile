@@ -1,14 +1,8 @@
-# Use official Python image
-FROM python:3.11-alpine
+FROM python:3.11
 
-# Set working directory to the ui folder
-WORKDIR /app/ui
+WORKDIR /app
+COPY . .
 
-# Copy all project files
-COPY . /app/
+RUN pip install flask
 
-# Expose port 8000
-EXPOSE 8000
-
-# Serve the ui folder using Python's built-in HTTP server
-CMD ["python", "-m", "http.server", "8000"]
+CMD ["python", "app.py"]
